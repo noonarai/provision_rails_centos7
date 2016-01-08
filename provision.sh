@@ -9,7 +9,6 @@ systemctl stop firewalld.service
 useradd rails
 chmod 755 /home/rails
 timedatectl set-timezone Asia/Tokyo
-echo 'alias ll="ls -la"' >> /etc/bashrc
 setenforce 0
 sed -i -e "s/^SELINUX=enforcing/SELINUX=disabled/g" /etc/selinux/config
 yum -y update
