@@ -23,10 +23,10 @@ source /etc/profile
 rbenv install 2.2.3
 rbenv rehash
 rbenv global 2.2.3
-dd if=/dev/zero of=/swapfile bs=1M count=2048
-mkswap /swapfile
-swapon /swapfile
-echo "/swapfile swap swap defaults 0 0" >> /etc/fstab
+#dd if=/dev/zero of=/swapfile bs=1M count=2048
+#mkswap /swapfile
+#swapon /swapfile
+#echo "/swapfile swap swap defaults 0 0" >> /etc/fstab
 gem install --no-ri --no-rdoc bundler
 rbenv rehash
 gem install --no-ri --no-rdoc passenger
