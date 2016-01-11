@@ -1,10 +1,13 @@
-## Getting started
+## Getting Started
 
-centos7, apache, passenger, mariadb, rbenv のvagrant開発環境構築。
+Set up an environment of RoR
+(with centos7, apache, passenger, mariadb, rbenv)
 
 ```
 $ git clone git@github.com:noonarai/provision_rails_centos7.git MYAPP
 $ cd MYAPP
 $ rm -rf .git .gitignore README.md
 $ vagrant up
+$ bundle install --path vendor/bundle
+$ bundle exec rails new . -Bf -d=mysql
 ```
