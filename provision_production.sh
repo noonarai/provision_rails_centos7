@@ -5,7 +5,8 @@
     exit 1
 }
 
-systemctl stop firewalld.service
+echo "alias ll='ls -la --color=auto'" >> /etc/profile.d/myalias.sh
+#systemctl stop firewalld.service
 useradd rails
 chmod 755 /home/rails
 timedatectl set-timezone Asia/Tokyo
@@ -23,10 +24,10 @@ source /etc/profile
 rbenv install 2.2.3
 rbenv rehash
 rbenv global 2.2.3
-#dd if=/dev/zero of=/swapfile bs=1M count=2048
-#mkswap /swapfile
-#swapon /swapfile
-#echo "/swapfile swap swap defaults 0 0" >> /etc/fstab
+dd if=/dev/zero of=/swapfile bs=1M count=2048
+mkswap /swapfile
+swapon /swapfile
+echo "/swapfile swap swap defaults 0 0" >> /etc/fstab
 gem install --no-ri --no-rdoc bundler
 rbenv rehash
 gem install --no-ri --no-rdoc passenger
@@ -38,12 +39,12 @@ cat <<'EOS' > /etc/httpd/conf.d/rails.conf
   #ServerName yourserver.com
 
   # Tell Apache and Passenger where your app's 'public' directory is
-  DocumentRoot /home/rails/vagrant/public
+  DocumentRoot /home/rails/MYAPP/public
 
-  RailsEnv development
+  RailsEnv production
 
   # Relax Apache security settings
-  <Directory /home/rails/vagrant/public>
+  <Directory /home/rails/MYAPP/public>
     Allow from all
     Options -MultiViews
     # Uncomment this if you're on Apache > 2.4:
@@ -60,7 +61,7 @@ EOS
 systemctl start mariadb.service
 mysql -u root <<EOS 
 -- Set the root password
-UPDATE mysql.user SET Password=PASSWORD('hogehoge') WHERE User='root';
+UPDATE mysql.user SET Password=PASSWORD('MYPW') WHERE User='root';
 FLUSH PRIVILEGES;
 -- Remove anonymous users
 DELETE FROM mysql.user WHERE User='';
