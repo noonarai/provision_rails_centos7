@@ -9,5 +9,5 @@ $ cd MYAPP
 $ rm -rf .git .gitignore README.md
 $ vagrant up
 $ bundle install --path vendor/bundle
-$ bundle exec rails new . -Bf -d=mysql
+$ bundle exec rails new . -Bf -d mysql
 ```
