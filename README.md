@@ -12,7 +12,7 @@ $ vagrant ssh
 ```
 
 ```
-$ cd /vagrant
+$ cd /home/vagrant/MYAPP
 $ bundle install --path vendor/bundle
 $ bundle exec rails new . -Bf -d mysql
 ```
