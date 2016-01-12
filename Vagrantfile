@@ -6,4 +6,8 @@ Vagrant.configure(2) do |config|
   config.vm.provider "virtualbox" do |v|
     v.memory = 2048
   end
+  config.vm.synced_folder ".", "/vagrant"
+
+  # アプリ名に合わせて変更
+  config.vm.synced_folder ".", "/home/vagrant/MYAPP"
 end
