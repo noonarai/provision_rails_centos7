@@ -7,6 +7,7 @@
 
 echo "alias ll='ls -la --color=auto'" >> /etc/profile.d/myalias.sh
 systemctl stop firewalld.service
+systemctl disable firewalld.service
 timedatectl set-timezone Asia/Tokyo
 setenforce 0
 sed -i -e "s/^SELINUX=enforcing/SELINUX=disabled/g" /etc/selinux/config
