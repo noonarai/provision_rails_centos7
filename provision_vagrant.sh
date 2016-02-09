@@ -34,12 +34,12 @@ cat <<'EOS' > /etc/httpd/conf.d/rails.conf
   #ServerName yourserver.com
 
   # Tell Apache and Passenger where your app's 'public' directory is
-  DocumentRoot /vagrant/public
+  DocumentRoot /MYAPP/public
 
   RailsEnv development
 
   # Relax Apache security settings
-  <Directory /vagrant/public>
+  <Directory /MYAPP/public>
     Allow from all
     Options -MultiViews
     # Uncomment this if you're on Apache > 2.4:
@@ -67,5 +67,10 @@ FLUSH PRIVILEGES;
 EOS
 systemctl restart mariadb.service
 systemctl enable mariadb.service
+
+cd /sandbox
+rm -rf .git README.md
+bundle install
+bundle exec rails new . -Bf -d mysql
 
 exit 0
