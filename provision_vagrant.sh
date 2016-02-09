@@ -68,7 +68,7 @@ EOS
 systemctl restart mariadb.service
 systemctl enable mariadb.service
 
-cd /sandbox
+cd /MYAPP
 rm -rf .git README.md
 bundle install
 bundle exec rails new . -Bf -d mysql
