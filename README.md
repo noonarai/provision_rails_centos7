@@ -6,13 +6,7 @@ Set up an environment of RoR
 ```
 $ git clone git@github.com:noonarai/provision_rails_centos7.git MYAPP
 $ cd MYAPP
-$ rm -rf .git README.md
+$ sed -i "" -e "s/MYAPP/your_app_name/g" Vagrantfile
+$ sed -i "" -e "s/MYAPP/your_app_name/g" provison_vagrat.sh
 $ vagrant up
-$ vagrant ssh
-```
-
-```
-$ cd /home/vagrant/MYAPP
-$ bundle install --path vendor/bundle
-$ bundle exec rails new . -Bf -d mysql
 ```
