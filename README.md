@@ -6,7 +6,7 @@ Set up an environment of RoR
 ```
 $ git clone git@github.com:noonarai/provision_rails_centos7.git MYAPP
 $ cd MYAPP
-$ rm -rf .git .gitignore README.md
+$ rm -rf .git README.md
 $ vagrant up
 $ vagrant ssh
 ```
