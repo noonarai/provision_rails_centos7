@@ -9,3 +9,8 @@ $ cd MYAPP
 $ find Vagrantfile provision_vagrant.sh | xargs sed -i "" -e "s/MYAPP/your_app_name/g"
 $ vagrant up
 ```
+
+※共有ディレクトリがマウントできないとかいうエラーが出た場合は、VitualBox GuestAdditionを入れ直す。
+ホストOSのVagrantfileがあるディレクトリで
+$ vagrant plugin install vagrant-vbguest
+を実行してから vagrant up し直す。
